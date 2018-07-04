@@ -40,7 +40,8 @@ public class VendorControllerTest {
                                         .lastName("Test Last Name 2")
                                         .build()));
 
-        webTestClient.get().uri("/api/v1/vendors")
+        webTestClient.get()
+                .uri("/api/v1/vendors")
                 .exchange()
                 .expectBodyList(Vendor.class)
                 .hasSize(2);
@@ -56,7 +57,8 @@ public class VendorControllerTest {
                                         .lastName("Test Last Name")
                                         .build()));
 
-        webTestClient.get().uri("/api/v1/vendors/someid")
+        webTestClient.get()
+                .uri("/api/v1/vendors/someid")
                 .exchange()
                 .expectBody(Vendor.class);
     }
